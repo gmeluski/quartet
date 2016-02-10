@@ -28,8 +28,10 @@ class Questionaire extends React.Component {
     ]
   }
 
-  updateDoctor() {
-
+  updateDoctor(doctorName) {
+    return (event) => {
+      this.setState({currentDoctor: doctorName})
+    }
   }
 
   setAnswer(position, value) {
@@ -53,7 +55,7 @@ class Questionaire extends React.Component {
         </div>
         <Messaging doctor={this.state.currentDoctor} />
         {this.getQuestions()}
-        <Therapists score={this.state.score} docSelected={this.updateDoctor} />
+        <Therapists score={this.state.score} handleClick={this.updateDoctor.bind(this)} />
       </div>
     )
   }

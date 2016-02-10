@@ -11,13 +11,9 @@ class Therapists extends React.Component {
     ]
   }
 
-  handleClick() {
-    this.props.docSelected()
-  }
-
   getTherapists() {
-    return this.names.map((name) => {
-      return <div onClick={this.handleClick}>{name}</div>
+    return this.names.map((name, index) => {
+      return <div key={index} onClick={this.props.handleClick(name)}>{name}</div>
     })
   }
 

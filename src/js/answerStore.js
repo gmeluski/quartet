@@ -9,11 +9,9 @@ class answerStore {
   }
 
   get total() {
-    let x = this.answerData.reduce((previousValue, currentValue) => {
+    return this.answerData.reduce((previousValue, currentValue) => {
       return parseInt(previousValue, 10) + parseInt(currentValue, 10)
      }, 0)
-    console.log(x)
-    return x
   }
 
   setAnswer(position, value) {
