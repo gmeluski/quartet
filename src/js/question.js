@@ -12,13 +12,19 @@ class Question extends React.Component {
      ]
   }
 
+  updateValue(e) {
+    this.props.handleAnswer(this.props.questionIndex, e.target.value)
+  }
+
   getInputs() {
-    let thisGroup = "question-" + this.props.key
+    let thisGroup = "question-" + this.props.questionIndex
 
     return this.values.map((value, index)=>{
       return (
-        <div>
-          <input name={thisGroup} type="radio" value={index} /> {value}
+        <div key={index}>
+          <input onClick={this.updateValue.bind(this)}
+            name={thisGroup} type="radio" value={index} />
+          <label>{value}</label>
         </div>
         )
     })

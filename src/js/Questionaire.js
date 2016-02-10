@@ -10,7 +10,7 @@ class Questionaire extends React.Component {
     this.answerStore = new answerStore()
     this.state = {
       answers: this.answerStore.answers,
-      totalScore: this.answerStore.total,
+      score: this.answerStore.total,
       currentDoctor: null,
     }
 
@@ -33,13 +33,14 @@ class Questionaire extends React.Component {
   }
 
   setAnswer(position, value) {
-    console.log(position + " " + value)
+    this.answerStore.setAnswer(position, value)
+    this.setState({score: this.answerStore.total})
   }
 
   getQuestions() {
     return this.questions.map((question, i) => {
-      return <Question handleAnswer={this.setAnswer}
-        questionText={question} key={i} />
+      return <Question handleAnswer={this.setAnswer.bind(this)}
+        questionText={question} key={i} questionIndex={i} />
     })
 
   }
@@ -47,12 +48,12 @@ class Questionaire extends React.Component {
   render() {
     return (
       <div>
-        <Messaging doctor={this.state.currentDoctor} />
-        {this.getQuestions()}
         <div>
           {this.state.score}
         </div>
-        <Therapists docSelected={this.updateDoctor} />
+        <Messaging doctor={this.state.currentDoctor} />
+        {this.getQuestions()}
+        <Therapists score={this.state.score} docSelected={this.updateDoctor} />
       </div>
     )
   }
