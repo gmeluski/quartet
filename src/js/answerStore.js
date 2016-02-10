@@ -9,6 +9,10 @@ class answerStore {
     return this.answerData
   }
 
+  get total() {
+    return this.answerData.reduce((a, b) => { return a + b }, 0)
+  }
+
 }
 
 export default answerStore

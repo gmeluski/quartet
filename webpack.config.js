@@ -9,7 +9,7 @@ module.exports = {
     preLoaders: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules|bower_components|test)/,
         loader: "source-map"
       }
     ],
@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules|bower_components|test)/,
         loaders: [
           "react-hot",
           "babel?presets[]=stage-0,presets[]=react,presets[]=es2015"
