@@ -31,12 +31,9 @@ class Questionaire extends React.Component {
    * handler for setting the state of the Doctor's name
    *
    * @param {String} doctorName
-   * @return {Function}
    */
   updateDoctor(doctorName) {
-    return (event) => {
-      this.setState({currentDoctor: doctorName})
-    }
+    this.setState({currentDoctor: doctorName})
   }
 
   /*
