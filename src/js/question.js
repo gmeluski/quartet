@@ -21,20 +21,20 @@ class Question extends React.Component {
 
     return this.values.map((value, index)=>{
       return (
-        <div key={index}>
+        <span key={index} className="radio-container">
           <input onClick={this.updateValue.bind(this)}
             name={thisGroup} type="radio" value={index} />
           <label>{value}</label>
-        </div>
+        </span>
         )
     })
 
   }
 
   render() {
-    return (
-      <div>
-        <div>
+    return  (
+      <div className="patient-question">
+        <div className="question-text">
           {this.props.questionText}
         </div>
         <div>

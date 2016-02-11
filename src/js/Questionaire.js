@@ -50,12 +50,13 @@ class Questionaire extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          {this.state.score}
-        </div>
         <Messaging doctor={this.state.currentDoctor} />
         {this.getQuestions()}
-        <Therapists score={this.state.score} handleClick={this.updateDoctor.bind(this)} />
+        <div>
+          Your score: {this.state.score}
+        </div>
+        <Therapists score={this.state.score}
+          handleClick={this.updateDoctor.bind(this)} />
       </div>
     )
   }

@@ -1,6 +1,22 @@
 html {
   body {
     font-size: 100%;
-    background: url(../img/repeater.jpg);
+    background-color: #fff;
+  }
+
+  .patient-question {
+    border-bottom: solid 1px #333;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+
+    .question-text {
+      margin-bottom: 7px;
+    }
+
+    .radio-container {
+      border-right: solid 1px #333;
+      padding-right: 7px;
+      margin-right: 3px;
+    }
   }
 }
