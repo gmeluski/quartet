@@ -27,18 +27,34 @@ class Questionaire extends React.Component {
       "Thoughts that you would be better off dead, or of hurting yourself in some way?",
     ]
   }
-
+  /**
+   * handler for setting the state of the Doctor's name
+   *
+   * @param {String} doctorName
+   * @return {Function}
+   */
   updateDoctor(doctorName) {
     return (event) => {
       this.setState({currentDoctor: doctorName})
     }
   }
 
+  /*
+   * handler for setting the answers
+   *
+   * @param {String} position
+   * @param {String} value
+   */
   setAnswer(position, value) {
     this.answerStore.setAnswer(position, value)
     this.setState({score: this.answerStore.total})
   }
 
+  /**
+   * return the list of question
+   *
+   * @return {Array}
+   */
   getQuestions() {
     return this.questions.map((question, i) => {
       return <Question handleAnswer={this.setAnswer.bind(this)}

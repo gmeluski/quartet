@@ -12,10 +12,20 @@ class Question extends React.Component {
      ]
   }
 
+  /**
+   * handler to update the value of the question
+   *
+   * @param {Object} e the event
+   */
   updateValue(e) {
     this.props.handleAnswer(this.props.questionIndex, e.target.value)
   }
 
+  /**
+   * return the input elemnts
+   *
+   * @return {Array}
+   * */
   getInputs() {
     let thisGroup = "question-" + this.props.questionIndex
 

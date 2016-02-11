@@ -11,6 +11,11 @@ class Therapists extends React.Component {
     ]
   }
 
+  /**
+   * return the therapist elements
+   *
+   * @return {Array}
+   */
   getTherapists() {
     return this.names.map((name, index) => {
       return <div key={index} onClick={this.props.handleClick(name)}>{name}</div>
