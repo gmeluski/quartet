@@ -19,4 +19,12 @@ html {
       margin-right: 3px;
     }
   }
+
+  .therapist {
+    cursor: pointer;
+  }
+
+  .therapist:hover {
+    background-color: #eee;
+  }
 }

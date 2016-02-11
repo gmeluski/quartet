@@ -22,7 +22,7 @@ class Therapists extends React.Component {
    */
   getTherapists() {
     return this.names.map((name, index) => {
-      return <div key={index} onClick={this.setTherapist.bind(this, name)}>{name}</div>
+      return <div className="therapist" key={index} onClick={this.setTherapist.bind(this, name)}>{name}</div>
     })
   }
 
