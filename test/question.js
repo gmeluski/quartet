@@ -1,3 +1,4 @@
+import React from "react"
 import {expect} from "chai"
 
 describe("the question component", function () {
@@ -9,7 +10,7 @@ describe("the question component", function () {
   function createComponent(component, props, children) {
     let shallowRenderer = TestUtils.createRenderer()
 
-    shallowRenderer.render(React.createElement(component, props,
+    shallowRenderer.render(React.createElement(component.default, props,
       children.length > 1 ? children : children[0]))
     return shallowRenderer.getRenderOutput()
   }
@@ -20,8 +21,10 @@ describe("the question component", function () {
   })
 
   it("works", function () {
-    let question = createComponent(question, { authors: [] }, "")
-    expect(authorList.props).to.be.empty
+    let myProps = { }
+    let question = createComponent(Question, myProps, "")
+    expect(question.props.className).to.equal("patient-question")
+    expect(question.props.children).to.have.length(2)
   })
 
 })
