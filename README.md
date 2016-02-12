@@ -9,4 +9,4 @@ The core issue to address was allowing the user to give and change answers while
 
 Each respective question passes data back up to the parent state when a user clicks on one of the possible answers, and the component acting as the maintainer of state uses the answerStore to track the answers and update the UI as necessary.
 
-With that store being updated outside of the UI Components, a listener is maintined (leaning on react's state / prop system) that passes the total down to a component reponsible for displaying the Doctors once a certain threshold is reached. When a doctor is selected, it passses that info up to the parent state and that handles the notification of the component responsible for displaying user feedback
+With that store being updated outside of the UI Components, a listener is maintained (leaning on react's state / prop system) that passes the total down to a component reponsible for displaying the Doctors once a certain threshold is reached. When a doctor is selected, it passses that info up to the parent state and that handles the notification of the component responsible for displaying user feedback
